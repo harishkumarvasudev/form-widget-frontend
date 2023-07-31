@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us Form</title>
+    <link rel="stylesheet" href="FormWidget/dist/form-widget/form-widget-v1.1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div style="width: 50%;margin: 0 auto;">
+        <h3>Sample 1: Contact Us Form</h3>
+        <form-widget formId="OyKwKiIF"></form-widget>
+    </div>
+    <div style="margin-top: 30px;">
+        <h4>Sample Dynamic JS Operations:</h4>
+        <table>
+            <tr>
+                <td>Change heading color:</td>
+                <td><input type="text" value="#333333" id="headingColor"/></td>
+                <td><button onclick="change('headingColor')">Save</button></td>
+            </tr>
+            <tr>
+                <td>Submit button background color:</td>
+                <td><input type="text" value="#00ff00" id="submitBackground"/></td>
+                <td><button onclick="change('submitBackground')">Save</button></td>
+            </tr>
+            <tr>
+                <td>Submit button alignment:</td>
+                <td><input type="text" value="right" id="submitAlign"/></td>
+                <td><button onclick="change('submitAlign')">Save</button></td>
+            </tr>
+            <tr>
+                <td>Form background color:</td>
+                <td><input type="text" value="#cdcdcd" id="backgroundColor"/></td>
+                <td><button onclick="change('backgroundColor')">Save</button></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var FORM_WIDGET_API_KEY = "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJUZW5hbnQgSWQiOiIxIiwiSXNzdWVyIjoiRm9ybSBXaWRnZXQgQXBwIiwiZXhwIjoxNzIyMzUyMDYwLCJpYXQiOjE2OTA3Mjk2NjB9.rhTZmk-zQH_0-7_TgALmUaF2KCiX9Ls3_ZXmPmxi93Y";
+    
+        var change = (id)=>{
+            let value = document.getElementById(id).value;
+            console.log(id,value);
+            switch (id) {
+                case 'submitBackground':
+                    changeWidgetAppearance("submit-button",{"background-color":value});
+                    break;
+                case 'headingColor':
+                    changeWidgetAppearance("header",{"title":{"color":value}});
+                    break;
+                case 'submitAlign':
+                    changeWidgetAppearance("submit-button",{"alignment":value});
+                    break;
+                case 'backgroundColor':
+                    changeWidgetAppearance("background",{"color":value});
+                    break;
+                default:
+                    alert("No matching type found");
+                    break;
+            }
+        }
+    
+    </script>
+    <script src="FormWidget/dist/form-widget/form-widget-v1.1.js"></script>
+</body>
+</html>
