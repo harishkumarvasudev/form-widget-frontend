@@ -1,13 +1,92 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>FormWidget</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>FormWidget</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- Include Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Include Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div style="width: 30%; margin: 0 auto">
+      <!-- Sample 2: User Feedback Collecting Form -->
+      <!-- Display the FormWidget component with formId attribute -->
+      <h3>Sample 2: User Feedback Collecting Form</h3>
+      <form-widget formId="eY94xOty"></form-widget>
+    </div>
+    <div style="margin-top: 30px">
+      <h4>Sample Dynamic JS Operations:</h4>
+      <table>
+        <tr>
+          <!-- Change heading color -->
+          <td>Change heading color:</td>
+          <td><input type="text" value="#333333" id="headingColor" /></td>
+          <td><button onclick="change('headingColor')">Save</button></td>
+        </tr>
+        <tr>
+          <!-- Submit button background color -->
+          <td>Submit button background color:</td>
+          <td><input type="text" value="#00ff00" id="submitBackground" /></td>
+          <td><button onclick="change('submitBackground')">Save</button></td>
+        </tr>
+        <tr>
+          <!-- Submit button alignment -->
+          <td>Submit button alignment:</td>
+          <td><input type="text" value="right" id="submitAlign" /></td>
+          <td><button onclick="change('submitAlign')">Save</button></td>
+        </tr>
+        <tr>
+          <!-- Form background color -->
+          <td>Form background color:</td>
+          <td><input type="text" value="#cdcdcd" id="backgroundColor" /></td>
+          <td><button onclick="change('backgroundColor')">Save</button></td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      // Define the API key for the FormWidget service
+      var FORM_WIDGET_API_KEY =
+        "eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJUZW5hbnQgSWQiOiIxIiwiSXNzdWVyIjoiRm9ybSBXaWRnZXQgQXBwIiwiZXhwIjoxNzIyMzUyMDYwLCJpYXQiOjE2OTA3Mjk2NjB9.rhTZmk-zQH_0-7_TgALmUaF2KCiX9Ls3_ZXmPmxi93Y";
+
+      // Function to change widget appearance based on the input type
+      var change = (id) => {
+        let value = document.getElementById(id).value;
+        console.log(id, value);
+        switch (id) {
+          case "submitBackground":
+            // Change the background color of the submit button
+            changeWidgetAppearance("submit-button", {
+              "background-color": value,
+            });
+            break;
+          case "headingColor":
+            // Change the color of the heading/title
+            changeWidgetAppearance("header", { title: { color: value } });
+            break;
+          case "submitAlign":
+            // Change the alignment of the submit button
+            changeWidgetAppearance("submit-button", { alignment: value });
+            break;
+          case "backgroundColor":
+            // Change the background color of the form
+            changeWidgetAppearance("background", { color: value });
+            break;
+          default:
+            alert("No matching type found");
+            break;
+        }
+      };
+    </script>
+  </body>
 </html>

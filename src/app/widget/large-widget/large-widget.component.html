@@ -1,0 +1,86 @@
+<div class="form-widget-parent form-widget-large"
+    *ngIf="formConfig"
+    [ngStyle]="{'font-family': appearance['font'] ? appearance['font'] : ''}">
+    
+    <div class="form-widget-full"
+        [ngStyle]="{'background': background['color'], 'padding': background['vertical-padding'] + ' ' + background['horizontal-padding']}">
+        
+        <!-- Left-hand section -->
+        <div class="form-widget-section-lhs">
+            <i [class]="'fas '+lhs_icon+' fa-beat'"
+                [ngStyle]="{'color': appearance['icon-color']}"></i>
+        </div>
+
+        <div class="form-widget-section-rhs" *ngIf="showSuccessMessage || showFailureMessage">
+            <div class="form-widget-successMsg" *ngIf="showSuccessMessage"><i class="fas fa-solid fa-circle-check"></i> {{ fields["success-message"] }}</div>
+            <div class="form-widget-errorMsg" *ngIf="showFailureMessage"><i class="fas fa-solid fa-circle-exclamation"></i> {{ errorMessage }}</div>
+        </div>
+        
+        <!-- Right-hand section -->
+        <div class="form-widget-section-rhs" *ngIf="!showSuccessMessage && !showFailureMessage">
+            <!-- Header -->
+            <div class="form-widget-section-header"
+                [ngStyle]="{'text-align': header['alignment']}">
+                
+                <div class="form-widget-section-title"
+                    [ngStyle]="{'color': header['title']['color'], 'font-size': header['title']['font-size']}">
+                    {{ fields["title"] }}
+                </div>
+                
+                <div class="form-widget-section-caption"
+                    [ngStyle]="{'color': header['caption']['color'], 'font-size': header['caption']['font-size']}">
+                    {{ fields["caption"] }}
+                </div>
+            </div>
+            
+            <form (ngSubmit)="saveForm()" [formGroup]="formGroup">
+                <div class="form-widget-section-form"
+                    [ngStyle]="{
+                        '--form-widget-label-color': formFields['label-color'],
+                        '--form-widget-border-color': formFields['border-color'],
+                        '--form-widget-fill-color': formFields['fill-color']
+                    }">
+                    
+                    <ng-container *ngFor="let field of form;">
+                        <div class="form-widget-input-field-parent" *ngIf="field['primary']">
+                            <mat-form-field appearance="outline" [ngClass]="field['size'] === 'full' ? 'width100' : 'width50'">
+                                <mat-label>{{field['label']}}</mat-label>
+                                <input *ngIf="field['type'] !== 'textarea'" matInput class="form-widget-input-field"
+                                    [type]="field['type']" [name]="field['name']" [formControlName]="field.name"/>
+                                <textarea *ngIf="field['type'] === 'textarea'" matInput class="form-widget-input-field" [name]="field['name']" [formControlName]="field.name"></textarea>
+                                <mat-error *ngIf="formGroup.get(field.name)?.errors?.['required']">Field is required.</mat-error>
+                                <!-- <mat-error *ngIf="formGroup.get(field.name)?.errors?.['email']">Invalid email address.</mat-error> -->
+                            </mat-form-field>
+                        </div>
+                    </ng-container>
+                    
+                    <!-- Additional Fields -->
+                    <div class="form-widget-section-form-additional-fields" (click)="additionalFields = true">
+                        <i class="fas fa-solid fa-angle-down"></i> Additional Fields
+                    </div>
+                    
+                    <ng-container *ngFor="let field of form;">
+                        <div class="form-widget-input-field-parent" *ngIf="!field['primary'] && additionalFields">
+                            <mat-form-field appearance="outline" [ngClass]="field['size'] === 'full' ? 'width100' : 'width50'">
+                                <mat-label>{{field['label']}}</mat-label>
+                                <input *ngIf="field['type'] !== 'textarea'" matInput class="form-widget-input-field"
+                                    [type]="field['type']" [name]="field['name']" [formControlName]="field.name"/>
+                                <textarea *ngIf="field['type'] === 'textarea'" matInput class="form-widget-input-field"
+                                    [name]="field['name']" [formControlName]="field.name"></textarea>
+                            </mat-form-field>
+                        </div>
+                    </ng-container>
+                </div>
+                
+                <!-- Submit Button -->
+                <div class="form-widget-section-button" [ngStyle]="{'text-align':submitButton['alignment']}">
+                    <button mat-raised-button
+                        [ngStyle]="{'color': submitButton['color'], 'background-color': submitButton['background-color']}"
+                        (click)="saveForm()" [disabled]="!formGroup.valid">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

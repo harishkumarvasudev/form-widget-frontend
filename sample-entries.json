@@ -1,0 +1,358 @@
+{
+  "type": "contactus",
+  "size": "large",
+  "formId": "OyKwKiIF",
+  "tenantId": "1",
+  "appearance": {
+    "color-scheme": "light",
+    "font": "Roboto",
+    "icon-color": "#666",
+    "header": {
+      "title": {
+        "color": "#181c20",
+        "font-size": "22px"
+      },
+      "caption": {
+        "color": "#181c20",
+        "font-size": "16px"
+      },
+      "cover-image": {
+        "enabled": false,
+        "image-url": ""
+      },
+      "logo": {
+        "enabled": true,
+        "image-url": ""
+      },
+      "alignment": "left"
+    },
+    "background": {
+      "color": "#ffecec",
+      "horizontal-padding": "0px",
+      "vertical-padding": "0px"
+    },
+    "form-fields": {
+      "label-color": "#181c20",
+      "fill-color": "#ffffee",
+      "border-color": "#181c20",
+      "corner-radius": "5px",
+      "label-font-size": "12px",
+      "field-font-size": "12px",
+      "text-field-design": "standard"
+    },
+    "submit-button": {
+      "color": "#FFF",
+      "background-color": "#FF3A3A",
+      "corner-radius": "5px",
+      "alignment": "left",
+      "size": "medium",
+      "button-design": "standard"
+    },
+    "success-message": {
+      "alignment": "center",
+      "color": "#333333",
+      "font-size": "14px"
+    }
+  },
+  "fields": {
+    "title": "Contact Us",
+    "caption": "Please fill the form below to reach out to us",
+    "success-message": "Thank you for writing to us! We will get back to you shortly!",
+    "lhs-icon": "fa-envelope-circle-check", //fa-id-card
+    "form": [
+      {
+        "label": "Name",
+        "type": "text",
+        "name": "name",
+        "required": true,
+        "primary": true,
+        "icon-family": "fa",
+        "icon": ""
+      },
+      {
+        "label": "Email Id",
+        "type": "email",
+        "name": "email",
+        "required": true,
+        "primary": true,
+        "icon-family": "fa",
+        "icon": ""
+      },
+      {
+        "label": "Subject",
+        "type": "text",
+        "name": "subject",
+        "required": true,
+        "primary": true,
+        "icon-family": "fa",
+        "icon": "",
+        "size": "full"
+      },
+      {
+        "label": "Message",
+        "type": "textarea",
+        "name": "message",
+        "required": true,
+        "primary": true,
+        "icon-family": "fa",
+        "icon": "",
+        "size": "full"
+      },
+      {
+        "label": "Phone Number",
+        "type": "tel",
+        "name": "phone",
+        "required": false,
+        "primary": false,
+        "icon-family": "fa",
+        "icon": ""
+      },
+      {
+        "label": "Company",
+        "type": "text",
+        "name": "company",
+        "required": false,
+        "primary": false,
+        "icon-family": "fa",
+        "icon": ""
+      }
+    ]
+  }
+}
+
+
+{
+  "type": "feedback",
+  "size": "small",
+  "formId": "eY94xOty",
+  "tenantId": "1",
+  "appearance": {
+    "color-scheme": "light",
+    "font": "Roboto",
+    "icon-color": "#055C9D",
+    "header": {
+      "title": {
+        "color": "#003060",
+        "font-size": "22px"
+      },
+      "caption": {
+        "color": "#003060",
+        "font-size": "16px"
+      },
+      "cover-image": {
+        "enabled": false,
+        "image-url": ""
+      },
+      "logo": {
+        "enabled": true,
+        "image-url": ""
+      },
+      "alignment": "left"
+    },
+    "background": {
+      "color": "#e8f6fd",
+      "horizontal-padding": "0px",
+      "vertical-padding": "0px"
+    },
+    "form-fields": {
+      "label-color": "#0E86D4",
+      "fill-color": "#ffffee",
+      "border-color": "#0E86D4",
+      "corner-radius": "5px",
+      "label-font-size": "12px",
+      "field-font-size": "12px",
+      "text-field-design": "standard"
+    },
+    "submit-button": {
+      "color": "#FFF",
+      "background-color": "#003060",
+      "corner-radius": "5px",
+      "alignment": "left",
+      "size": "medium",
+      "button-design": "standard"
+    },
+    "success-message": {
+      "alignment": "center",
+      "color": "#333333",
+      "font-size": "14px"
+    }
+  },
+  "fields": {
+    "title": "We Value Your Feedback",
+    "caption": "Please fill the form below to help us improve",
+    "success-message": "Thanks for your feedback!",
+    "lhs-icon": "fa-comments",
+    "form": [
+      {
+        "label": "Name",
+        "type": "text",
+        "name": "name",
+        "required": true,
+        "primary": true,
+        "icon-family": "fa",
+        "icon": ""
+      },
+      {
+        "label": "Email Id",
+        "type": "email",
+        "name": "email",
+        "required": true,
+        "primary": true,
+        "icon-family": "fa",
+        "icon": ""
+      },
+      {
+        "label": "Feedback",
+        "type": "textarea",
+        "name": "feedback",
+        "required": true,
+        "primary": true,
+        "icon-family": "fa",
+        "icon": "",
+        "size": "full"
+      },
+      {
+        "label": "Company",
+        "type": "text",
+        "name": "company",
+        "required": false,
+        "primary": true,
+        "icon-family": "fa",
+        "icon": "",
+        "size": "full"
+      },
+      {
+        "label": "Phone Number",
+        "type": "tel",
+        "name": "phone",
+        "required": false,
+        "primary": false,
+        "icon-family": "fa",
+        "icon": ""
+      }
+    ]
+  }
+}
+
+
+{
+  "type": "lead",
+  "size": "large",
+  "formId": "Dp2QwtUY",
+  "tenantId": "1",
+  "appearance": {
+    "color-scheme": "light",
+    "font": "Roboto",
+    "icon-color": "#868B8E",
+    "header": {
+      "title": {
+        "color": "#868B8E",
+        "font-size": "22px"
+      },
+      "caption": {
+        "color": "#868B8E",
+        "font-size": "16px"
+      },
+      "cover-image": {
+        "enabled": false,
+        "image-url": ""
+      },
+      "logo": {
+        "enabled": true,
+        "image-url": ""
+      },
+      "alignment": "left"
+    },
+    "background": {
+      "color": "#EEEDE7",
+      "horizontal-padding": "0px",
+      "vertical-padding": "0px"
+    },
+    "form-fields": {
+      "label-color": "#181c20",
+      "fill-color": "#ffffee",
+      "border-color": "#181c20",
+      "corner-radius": "5px",
+      "label-font-size": "12px",
+      "field-font-size": "12px",
+      "text-field-design": "standard"
+    },
+    "submit-button": {
+      "color": "#181c20",
+      "background-color": "#E7D2CC",
+      "corner-radius": "5px",
+      "alignment": "left",
+      "size": "medium",
+      "button-design": "standard"
+    },
+    "success-message": {
+      "alignment": "center",
+      "color": "#333333",
+      "font-size": "14px"
+    }
+  },
+  "fields": {
+    "title": "Request for a Happyfox Demo",
+    "caption": "Please fill the form below to know more about Happyfox",
+    "success-message": "Thank you for you interest in Happyfox. We will get back to you with a customized demo for you.",
+    "lhs-icon": "fa-id-card",
+    "form": [
+      {
+        "label": "Name",
+        "type": "text",
+        "name": "name",
+        "required": true,
+        "primary": true,
+        "icon-family": "fa",
+        "icon": ""
+      },
+      {
+        "label": "Email Id",
+        "type": "email",
+        "name": "email",
+        "required": true,
+        "primary": true,
+        "icon-family": "fa",
+        "icon": ""
+      },
+      {
+        "label": "Company",
+        "type": "text",
+        "name": "company",
+        "required": true,
+        "primary": true,
+        "icon-family": "fa",
+        "icon": ""
+      },
+      {
+        "label": "Product",
+        "type": "text",
+        "name": "product",
+        "required": true,
+        "primary": true,
+        "icon-family": "fa",
+        "icon": "",
+        "size": "full"
+      },
+      {
+        "label": "Demo Requirements",
+        "type": "textarea",
+        "name": "requirements",
+        "required": true,
+        "primary": true,
+        "icon-family": "fa",
+        "icon": "",
+        "size": "full"
+      },
+      {
+        "label": "Phone Number",
+        "type": "tel",
+        "name": "phone",
+        "required": false,
+        "primary": false,
+        "icon-family": "fa",
+        "icon": ""
+      }
+    ]
+  }
+}

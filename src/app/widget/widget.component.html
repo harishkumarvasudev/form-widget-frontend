@@ -1,0 +1,17 @@
+<!-- This div will be shown only if formConfig is truthy (i.e., not null, undefined, false, or an empty string/array/object) -->
+<div *ngIf="formConfig">
+  <!-- The main container div for the form widget -->
+  <div class="form-widget">
+    <!-- This section will be shown only if the formConfig['size'] is 'large' -->
+    <large-widget
+      *ngIf="formConfig['size'] == 'large'"
+      [config]="formConfig"
+    ></large-widget>
+
+    <!-- This section will be shown only if the formConfig['size'] is 'small' -->
+    <small-widget
+      *ngIf="formConfig['size'] == 'small'"
+      [config]="formConfig"
+    ></small-widget>
+  </div>
+</div>

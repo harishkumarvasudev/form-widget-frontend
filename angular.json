@@ -16,6 +16,7 @@
             "outputPath": "dist/form-widget",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "aot":true,
             "polyfills": [
               "zone.js"
             ],
@@ -25,6 +26,8 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -43,7 +46,7 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "none"
             },
             "development": {
               "buildOptimizer": false,

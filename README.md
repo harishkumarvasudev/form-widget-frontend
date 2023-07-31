@@ -1,27 +1,69 @@
-# FormWidget
+**FormWidget Angular App**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.5.
+This project is an Angular application that provides a customizable form widget for collecting user feedback. It allows users to integrate a feedback collection form into their websites and customize its appearance dynamically using JavaScript.
 
-## Development server
+### Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+To get started with this project, follow the instructions below:
 
-## Code scaffolding
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
+3. Install the required dependencies using `npm install`.
+4. Build the Angular app using `ng build`.
+5. Serve the application locally using `ng serve`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Project Structure
 
-## Build
+The project consists of the following components and services:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. `WidgetComponent`: The main component that represents the form widget. It handles the dynamic appearance changes and form submissions.
 
-## Running unit tests
+2. `LargeWidgetComponent`: A child component used to display a larger version of the widget with additional fields.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. `SmallWidgetComponent`: A child component used to display a smaller version of the widget.
 
-## Running end-to-end tests
+4. `WidgetService`: A service responsible for interacting with the server to fetch form configurations and save user form submissions.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+5. `FormBuilder` and `FormGroup`: Angular's form builder and form group classes to manage form fields and validations.
 
-## Further help
+6. External Libraries: The project uses the `FontAwesomeModule` for icons and `HttpClientModule` to make HTTP requests.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### How to Use
+
+To integrate the form widget into your website, follow these steps:
+
+1. Include the FormWidget Angular app in your website using a script tag.
+
+```html
+<script src="path/to/form-widget.js"></script>
+```
+
+2. Add the FormWidget HTML tag with the desired formId.
+
+```html
+<form-widget formId="yourFormId"></form-widget>
+```
+
+3. Optionally, you can use the provided JavaScript functions to dynamically change the appearance of the widget.
+
+### Dynamic JS Operations
+
+The sample webpage provides examples of dynamic JS operations to change the appearance of the form widget:
+
+1. Change Heading Color: Set the color of the widget's heading or title.
+
+2. Submit Button Background Color: Set the background color of the widget's submit button.
+
+3. Submit Button Alignment: Align the widget's submit button to the left, right, or center.
+
+4. Form Background Color: Set the background color of the form.
+
+5. And all the fields in appearance section. Sample json available as sample-entries.json.
+
+### API Key
+
+The FormWidget Angular app requires an API key to communicate with the server for fetching form configurations and saving user form submissions. Ensure that the `FORM_WIDGET_API_KEY` variable is set with the valid API key.
+
+### Customization
+
+You can customize the appearance of the widget by modifying the Angular components and templates. Additionally, you can add more form fields and appearance options as needed.
